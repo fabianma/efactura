@@ -22,7 +22,7 @@ public class EfacturaResponseBuilder {
         response.setTrackId(root.path("trackId").asText(null));
         response.setUUID(root.path("uuid").asText(null));
 
-        if (!root.path("message").isNull()) {
+        if (!root.path("message").toString().isEmpty()) {
             response.setErrorMessage(root.path("message").asText(null));
         } else {
             ReasonType reason = new ReasonType();

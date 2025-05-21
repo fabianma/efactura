@@ -36,6 +36,8 @@ io.quarkus.vertx.utils:quarkus-vertx-utils::jar:3.22.1
 io.quarkus:quarkus-arc::jar:3.22.1
 io.quarkus:quarkus-bootstrap-runner::jar:3.22.1
 io.quarkus:quarkus-classloader-commons::jar:3.22.1
+io.quarkus:quarkus-container-image-openshift::jar:3.22.1
+io.quarkus:quarkus-container-image::jar:3.22.1
 io.quarkus:quarkus-core::jar:3.22.1
 io.quarkus:quarkus-credentials::jar:3.22.1
 io.quarkus:quarkus-development-mode-spi::jar:3.22.1
@@ -43,8 +45,11 @@ io.quarkus:quarkus-fs-util::jar:1.0.0
 io.quarkus:quarkus-jackson::jar:3.22.1
 io.quarkus:quarkus-jaxb::jar:3.22.1
 io.quarkus:quarkus-jaxp::jar:3.22.1
+io.quarkus:quarkus-kubernetes-client-internal::jar:3.22.1
+io.quarkus:quarkus-kubernetes::jar:3.22.1
 io.quarkus:quarkus-mutiny::jar:3.22.1
 io.quarkus:quarkus-netty::jar:3.22.1
+io.quarkus:quarkus-openshift::jar:3.22.1
 io.quarkus:quarkus-security-runtime-spi::jar:3.22.1
 io.quarkus:quarkus-smallrye-context-propagation::jar:3.22.1
 io.quarkus:quarkus-tls-registry-spi::jar:3.22.1

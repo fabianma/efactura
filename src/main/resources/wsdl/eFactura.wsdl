@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="eFactura"
+	targetNamespace="http://www.celsia.com/contrato/contable/eFactura_v1"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:nscom="http://www.celsia.com/contrato/contable/eFactura_v1"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:obj1="http://www.celsia.com/schema/efactura/v1"
+	xmlns:obj2="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+	xmlns:nsfws="http://pragma.co/ents/common/BaseMessageFormat/V1">	
+
+	<wsdl:types>		
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<!-- Definicion tipos eFactura -->
+			<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+				schemaLocation="xsd/maindoc/UBL-Invoice-2.1.xsd">
+			</xsd:import>
+			<xsd:import namespace="http://www.celsia.com/schema/efactura/v1"
+				schemaLocation="xsd/efacturaServicePS.xsd">
+			</xsd:import>
+			<!-- Definicion tipos para cabecera de mensaje "PRAGMA" -->
+			<xsd:import namespace="http://pragma.co/ents/common/BaseMessageFormat/V1"
+				schemaLocation="xsd/Pragma-common-BaseMessageFormat-V1.xsd">
+			</xsd:import>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="requestHeaderMsg">
+		<wsdl:part element="nsfws:requestHeaderOut" name="requestHeader"/>
+	</wsdl:message>
+	<wsdl:message name="responseHeaderMsg">
+		<wsdl:part element="nsfws:responseHeaderOut" name="responseHeader"/>
+	</wsdl:message>
+	<wsdl:message name="eFacturaRequestMessage">
+		<wsdl:part element="obj2:Invoice" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="eFacturaResponseMessage">
+		<wsdl:part element="obj1:eDocumentResponse" name="parameters"/>
+	</wsdl:message>
+	<wsdl:message name="exceptionList">
+		<wsdl:part name="error" element="nsfws:exceptionList"/>
+	</wsdl:message>
+	<wsdl:portType name="eFactura_interface">
+		<wsdl:operation name="eFactura">
+			<wsdl:input message="nscom:eFacturaRequestMessage"/>
+			<wsdl:output message="nscom:eFacturaResponseMessage"/>
+			<wsdl:fault name="error" message="nscom:exceptionList"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="eFactura_interfaceSOAP" type="nscom:eFactura_interface">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="eFactura">
+			<soap:operation
+				soapAction="http://www.celsia.com/contable/eFactura/eFactura" />
+			<wsdl:input>
+				<soap:header use="literal" part="requestHeader" message="nscom:requestHeaderMsg"/>
+				<soap:body parts="parameters" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:header message="nscom:responseHeaderMsg" part="responseHeader"
+					use="literal" />
+				<soap:body parts="parameters" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="error">
+				<soap:fault name="error" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="eFactura_interface">
+		<wsdl:port name="eFactura_interfaceSOAP_DES" binding="nscom:eFactura_interfaceSOAP">
+			<soap:address location="https://datapowerdllo01.celsia.local:443/comercial/efactura_V2.1"/>
+		</wsdl:port>
+		<wsdl:port name="eFactura_interfaceSOAP_TEST" binding="nscom:eFactura_interfaceSOAP">
+			<soap:address location="https://datapowerqa01.celsia.local:443/comercial/efactura_V2.1"/>
+		</wsdl:port>
+		<wsdl:port name="eFactura_interfaceSOAP_PRD" binding="nscom:eFactura_interfaceSOAP">
+			<soap:address location="https://datapowerpdn.celsia.local:443/comercial/efactura_V2.1"/>
+		</wsdl:port>	
+	</wsdl:service>
+</wsdl:definitions>
+
+
+
+
+
+
+
+
+
+

@@ -5,7 +5,7 @@ metadata:
   annotations:
     app.openshift.io/vcs-uri: <<unknown>>
     app.quarkus.io/quarkus-version: 3.22.1
-    app.quarkus.io/build-timestamp: 2025-05-21 - 21:01:25 +0000
+    app.quarkus.io/build-timestamp: 2025-05-22 - 14:46:30 +0000
   labels:
     app.kubernetes.io/name: efactura
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -41,7 +41,7 @@ metadata:
   annotations:
     app.openshift.io/vcs-uri: <<unknown>>
     app.quarkus.io/quarkus-version: 3.22.1
-    app.quarkus.io/build-timestamp: 2025-05-21 - 21:01:25 +0000
+    app.quarkus.io/build-timestamp: 2025-05-22 - 14:46:30 +0000
   labels:
     app.kubernetes.io/name: efactura
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -58,7 +58,7 @@ metadata:
   annotations:
     app.openshift.io/vcs-uri: <<unknown>>
     app.quarkus.io/quarkus-version: 3.22.1
-    app.quarkus.io/build-timestamp: 2025-05-21 - 21:01:25 +0000
+    app.quarkus.io/build-timestamp: 2025-05-22 - 14:46:30 +0000
   labels:
     app.kubernetes.io/name: efactura
     app.kubernetes.io/version: 1.0.0-SNAPSHOT
@@ -84,7 +84,7 @@ metadata:
   annotations:
     app.openshift.io/vcs-uri: <<unknown>>
     app.quarkus.io/quarkus-version: 3.22.1
-    app.quarkus.io/build-timestamp: 2025-05-21 - 21:01:25 +0000
+    app.quarkus.io/build-timestamp: 2025-05-22 - 14:46:30 +0000
   labels:
     app.kubernetes.io/managed-by: quarkus
     app.openshift.io/runtime: quarkus
@@ -103,7 +103,7 @@ spec:
         alpha.image.policy.openshift.io/resolve-names: '*'
         app.openshift.io/vcs-uri: <<unknown>>
         app.quarkus.io/quarkus-version: 3.22.1
-        app.quarkus.io/build-timestamp: 2025-05-21 - 21:01:25 +0000
+        app.quarkus.io/build-timestamp: 2025-05-22 - 14:46:30 +0000
       labels:
         app.kubernetes.io/managed-by: quarkus
         app.openshift.io/runtime: quarkus
